@@ -1,0 +1,27 @@
+
+void printSpiral(int a[ROWS][COLS], int r, int c)
+{
+  int i=0,j,k=0,l=0;
+  int lastr=r-1,lastc=c-1;
+  while(k<=lastr && l<=lastc)
+  {
+    for(i=l;i<=lastc;i++)
+      printf("%d\n",a[k][i]);
+    k++;
+    for(i=k;i<=lastr;i++)
+       printf("%d\n",a[i][lastc]);
+    lastc--;
+    if(k<=lastr)
+    {
+      for(i=lastc;i>=l;i--)
+         printf("%d\n",a[lastr][i]);
+      lastr--;
+    }
+    if(l<=lastc)
+    {
+      for(i=lastr;i>=k;i--)
+         printf("%d\n",a[i][l]);
+      l++;
+    }
+  }
+}
